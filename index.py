@@ -8,7 +8,7 @@ from moviepy.editor import *
 video_width = 1280
 video_height = 720
 header_height = 40
-length = 50
+length = 100
 
 column_width = video_width / length
 column_height = ((video_height - header_height) / length)
@@ -22,6 +22,7 @@ colors = {
   "white": (255, 255, 255),
   "red": (255, 0, 0),
   "green": (0, 255, 0),
+  "black": (0, 0, 0),
 }
 
 column_colors = []
@@ -43,7 +44,7 @@ def make_frame():
   draw = ImageDraw.Draw(img)
 
   for i in range(len(nums)):
-    draw.rectangle([(i * column_width, video_height - nums[i] * column_height), ((i + 1) * column_width, video_height)], column_colors[i])
+    draw.rectangle([(i * column_width, video_height - nums[i] * column_height), ((i + 1) * column_width, video_height)], column_colors[i], outline=colors["black"])
 
   return asarray(img)
 
