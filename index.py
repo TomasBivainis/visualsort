@@ -8,14 +8,13 @@ from moviepy.editor import *
 video_width = 1280
 video_height = 720
 header_height = 40
-length = 100
+length = 10
 
 column_width = video_width / length
 column_height = ((video_height - header_height) / length)
 
-fps = 50
+fps = 2
 
-nums = []
 clips = []
 
 colors = {
@@ -30,15 +29,13 @@ default_colors = []
 
 video_dir = './video/'
 
-for i in range(1, length + 1):
-  nums.append(i)
-  default_colors.append(colors["white"])
-
-column_colors = default_colors.copy()
-
-random.shuffle(nums)
-
-def make_frame():
+def make_frame(nums):
+  global video_height
+  global video_width
+  global column_width
+  global column_height
+  global column_colors
+  
   img = Image.new('RGB', (video_width, video_height))
 
   draw = ImageDraw.Draw(img)
@@ -48,37 +45,82 @@ def make_frame():
 
   return asarray(img)
 
-def add_clip():
-  clips.append(make_frame())
+def add_clip(nums):
+  clips.append(make_frame(nums))
 
-add_clip()
+def compare(a, b, nums):
+  assign_color(b, "red")
+  return nums[a] > nums[b]
 
-for i in range(len(nums)):
-  column_colors[i] = colors["green"]
-  for j in range(i + 1, len(nums)):
-    column_colors[j] = colors["red"]
-    if nums[i] > nums[j]:
-      tmp = nums[i]
-      nums[i] = nums[j]
-      nums[j] = tmp
-      add_clip()
-      column_colors = default_colors.copy()
-      column_colors[i] = colors["green"]
+def swap(a, b, nums):
+  add_clip(nums)
+  tmp = nums[a]
+  nums[a] = nums[b]
+  nums[b] = tmp
+  add_clip(nums)
+  reset_colors()
+  assign_color(a, "green")
+  return nums
 
-column_colors = default_colors.copy()
+def bubble_sort(nums):
+  for i in range(len(nums)):
+    assign_color(i, "green")
+    for j in range(i + 1, len(nums)):
+      if compare(i, j, nums):
+        # maybe reference?
+        nums = swap(i, j, nums)
+    reset_colors()
 
-for i in range(len(nums)):
-  column_colors[i] = colors["red"]
-  add_clip()
-  column_colors[i] = colors["green"]
+def assign_color(x, color):
+  global column_colors
+  global colors
+  
+  column_colors[x] = colors[color]
 
-column_colors = default_colors.copy()
+def generate_numbers():
+  global default_colors
+  
+  nums = []
+  for i in range(1, length + 1):
+    nums.append(i)
+    default_colors.append(colors["white"])
 
-add_clip()
+  random.shuffle(nums)
 
-if not os.path.exists(video_dir):
-  os.mkdir(video_dir)
+  return nums
 
-final_clip = ImageSequenceClip(clips, fps=fps)
+def go_through(nums):
+  for i in range(len(nums)):
+    assign_color(i, "red")
+    add_clip(nums)
+    assign_color(i, "green")
 
-final_clip.write_videofile(video_dir + 'movie.mp4', fps=fps)
+  reset_colors()
+  
+  add_clip(nums)
+
+def reset_colors():
+  global column_colors
+  global default_colors
+  column_colors = default_colors.copy()
+  
+sorting_algorithms = [bubble_sort]
+
+if __name__ == "__main__":
+  nums = generate_numbers()
+  reset_colors()
+  
+  add_clip(nums)
+  
+  sorting_algorithms[0](nums)
+  
+  go_through(nums)
+
+  if not os.path.exists(video_dir):
+    os.mkdir(video_dir)
+
+  final_clip = ImageSequenceClip(clips, fps=fps)
+
+  final_clip.write_videofile(video_dir + 'movie.mp4', fps=fps)
+  
+
