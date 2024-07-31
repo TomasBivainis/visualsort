@@ -8,12 +8,12 @@ from moviepy.editor import *
 video_width = 1280
 video_height = 720
 header_height = 40
-length = 50
+length = 100
 
 column_width = video_width / length
 column_height = ((video_height - header_height) / length)
 
-fps = 40
+fps = 50
 
 clips = []
 
@@ -53,7 +53,6 @@ def compare(a, b, nums):
   return nums[a] > nums[b]
 
 def swap(a, b, nums):
-  add_clip(nums)
   tmp = nums[a]
   nums[a] = nums[b]
   nums[b] = tmp
@@ -67,7 +66,6 @@ def bubble_sort(nums):
     assign_color(i, "green")
     for j in range(i + 1, len(nums)):
       if compare(i, j, nums):
-        # maybe reference?
         nums = swap(i, j, nums)
     reset_colors()
 

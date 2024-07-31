@@ -1,8 +1,3 @@
 # Sorting video factory
 
-## TODO:
-
-- Add other sorting functions.
-- Add sound.
-- Add text.
-- Add a gui.
+Creates a video that visualizes a bubble sort. I may expand the project with other tools but for now this is it.
