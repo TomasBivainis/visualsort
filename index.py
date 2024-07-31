@@ -8,12 +8,12 @@ from moviepy.editor import *
 video_width = 1280
 video_height = 720
 header_height = 40
-length = 10
+length = 50
 
 column_width = video_width / length
 column_height = ((video_height - header_height) / length)
 
-fps = 2
+fps = 40
 
 clips = []
 
