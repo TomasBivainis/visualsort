@@ -1,4 +1,4 @@
-from module import *
+from .module import *
 
 def compare(a, b, nums):
   assign_color(a, "green")
