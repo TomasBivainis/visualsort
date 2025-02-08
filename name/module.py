@@ -49,6 +49,7 @@ def add_clip(nums):
   clips.append(make_frame(nums))
 
 def compare(a, b, nums):
+  assign_color(a, "green")
   assign_color(b, "red")
   return nums[a] > nums[b]
 
@@ -58,16 +59,7 @@ def swap(a, b, nums):
   nums[b] = tmp
   add_clip(nums)
   reset_colors()
-  assign_color(a, "green")
   return nums
-
-def bubble_sort(nums):
-  for i in range(len(nums)):
-    assign_color(i, "green")
-    for j in range(i + 1, len(nums)):
-      if compare(i, j, nums):
-        nums = swap(i, j, nums)
-    reset_colors()
 
 def assign_color(x, color):
   global column_colors
@@ -101,16 +93,14 @@ def reset_colors():
   global column_colors
   global default_colors
   column_colors = default_colors.copy()
-  
-sorting_algorithms = [bubble_sort]
 
-if __name__ == "__main__":
+def render(algorithm):
   nums = generate_numbers()
   reset_colors()
   
   add_clip(nums)
   
-  sorting_algorithms[0](nums)
+  algorithm(nums)
   
   go_through(nums)
 
@@ -120,5 +110,3 @@ if __name__ == "__main__":
   final_clip = ImageSequenceClip(clips, fps=fps)
 
   final_clip.write_videofile(video_dir + 'movie.mp4', fps=fps)
-  
-

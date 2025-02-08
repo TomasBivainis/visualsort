@@ -2,3 +2,5 @@ pillow
 random
 os
 moviepy
+numpy
+PIL

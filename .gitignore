@@ -1,1 +1,8 @@
 /video
+/bubble_sort.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
