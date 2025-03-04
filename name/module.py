@@ -13,8 +13,6 @@ length = 100
 column_width = video_width / length
 column_height = ((video_height - header_height) / length)
 
-fps = 50
-
 clips = []
 
 colors = {
@@ -26,8 +24,6 @@ colors = {
 
 column_colors = []
 default_colors = []
-
-video_dir = './video/'
 
 def make_frame(nums):
   global video_height
