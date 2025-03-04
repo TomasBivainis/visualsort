@@ -13,7 +13,7 @@ def swap(a, b, nums):
   reset_colors()
   return nums
 
-def render(algorithm):
+def render(algorithm, video_directory = "./", vidoe_name = "movie", fps = 50):
   nums = generate_numbers()
   reset_colors()
   
@@ -23,9 +23,9 @@ def render(algorithm):
   
   go_through(nums)
 
-  if not os.path.exists(video_dir):
-    os.mkdir(video_dir)
+  if not os.path.exists(video_directory):
+    os.mkdir(video_directory)
 
   final_clip = ImageSequenceClip(clips, fps=fps)
 
-  final_clip.write_videofile(video_dir + 'movie.mp4', fps=fps)
+  final_clip.write_videofile(os.path.join(video_directory, vidoe_name + ".mp4"), fps=fps)
