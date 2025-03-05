@@ -4,8 +4,6 @@ Visualsort provides functions with which you can program a sorting algortithm an
 
 ## Instalation
 
-### For use
-
 To install the package only for use, run
 
 ```
@@ -13,22 +11,6 @@ pip install visualsort
 ```
 
 in the terminal.
-
-### For modification
-
-To modify the package, run
-
-```
-git clone git@github.com:TomasBivainis/visualsort.git
-```
-
-and then
-
-```
-pip insatll -r requirements.txt
-```
-
-to install all of the required modules.
 
 ## Quick start
 
@@ -46,9 +28,19 @@ def bubble_sort(nums):
 render(bubble_sort)
 ```
 
+## Development
+
+To set up a local development environment, run:
+
+```
+git clone git@github.com:TomasBivainis/visualsort.git
+cd visualsort
+pip insatll -r requirements.txt
+```
+
 ## Tests
 
-To run tests, run
+Tests can be found in the `tests` folder. To run them, run:
 
 ```
 pytest
