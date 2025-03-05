@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='my_package',                          # Name of your package
+    name='visualsort',                          # Name of your package
     version='0.1',                              # Package version
     packages=find_packages(),                   # Automatically find all packages
     install_requires=[                          # Dependencies
@@ -16,6 +16,7 @@ setup(
     test_suite='tests',                         # Location of tests
     tests_require=[                             # Test dependencies
         'pytest',
+        'pytest-mock',
     ],
     author='Tomas Bivainis',
     author_email='bivainis.tomas@gmail.com',

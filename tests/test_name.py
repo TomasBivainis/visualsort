@@ -1,6 +1,6 @@
 import pytest
 import pytest_mock
-from name import swap, compare
+from visualsort import swap, compare
 
 nums = [3, 2, 1]  
 
