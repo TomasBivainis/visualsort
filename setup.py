@@ -20,7 +20,7 @@ setup(
     ],
     author='Tomas Bivainis',
     author_email='bivainis.tomas@gmail.com',
-    description='A short description of your package',
+    description='Visualsort lets you write sorting algorithms with given functions and then render them to videos.',
     long_description=open('README.md').read(),  # Detailed description from README
     long_description_content_type='text/markdown',
     url='https://github.com/yourusername/my_package',  # GitHub or project URL
