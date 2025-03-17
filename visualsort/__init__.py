@@ -1,19 +1,19 @@
 from .module import *
+from collections.abc import Callable
 
-def compare(a, b, nums):
+def compare(a: int, b: int, nums: list) -> bool:
   """
   Compares two numbers and updates the current frame.
   
-  Args:
-      a (int): The index of the first number in the array.
-      b (int): The index of the second number in the array.
-      nums (list): The array of numbers.
-
-  Returns:
-      bool: True if the first number is greater than the second number, False otherwise.
-
-  Raises:
-      IndexError: If either of the indices is out of bounds.
+  :param a: The index of the first number in the array.
+  :type a: int
+  :param b: (int): The index of the second number in the array.
+  :type b: int
+  :param nums: (list): The array of numbers.
+  :type nums: list
+  :return: True if the first number is greater than the second number, False otherwise.
+  :rtype: bool
+  :raises IndexError: If either of the indices is out of bounds.
   """
   if(a < 0 or a >= len(nums) or b < 0 or b >= len(nums)):
     raise IndexError("Index out of bounds.")
@@ -22,20 +22,20 @@ def compare(a, b, nums):
   assign_color(b, "red")
   return nums[a] > nums[b]
 
-def swap(a, b, nums):
+def swap(a: int, b: int, nums: list) -> list:
   """
   Swaps two numbers and updates the current frame.
 
-  Args:
-      a (int): The index of the first number in the array.
-      b (int): The index of the second number in the array.
-      nums (list): The array of numbers.
-
-  Returns:
-      list: The array of numbers after the swap.
-
-  Raises:
-      IndexError: If either of the indices is out of bounds.
+  
+  :param a: The index of the first number in the array.
+  :type a: int
+  :param b: The index of the second number in the array.
+  :type b: int
+  :param nums: The array of numbers.
+  :type nums: list
+  :return: The array of numbers after the swap.
+  :rtype: list
+  :raises IndexError: If either of the indices is out of bounds.
   """
   if(a < 0 or a >= len(nums) or b < 0 or b >= len(nums)):
     raise IndexError("Index out of bounds.")
@@ -47,18 +47,19 @@ def swap(a, b, nums):
   reset_colors()
   return nums
 
-def render(algorithm, video_directory = "./", vidoe_name = "movie", fps = 50):
+def render(algorithm: Callable, video_directory: str = "./", vidoe_name: str = "movie", fps: int = 50) -> None:
   """
   Renders the given algorithm to a video.
 
-  Args:
-      algorithm (function): The sorting algorithm (writen using the provided visualsort functions) that will be rendered.
-      video_directory (str): The dirrectory where the video file will be saved.
-      video_name (str): The diseried name of the video file.
-      fps (int): The frame rate of the video.
-
-  Raises:
-      IndexError: If either of the indices is out of bounds.
+  :param algorithm: The sorting algorithm (writen using the provided visualsort functions) that will be rendered.
+  :type algorithm: function
+  :param video_directory: The dirrectory where the video file will be saved.
+  :type video_directory: str
+  :param video_name: The diseried name of the video file.
+  :type video_name: str
+  :param fps: The frame rate of the video.
+  :type fps: int
+  :raises IndexError: If either of the indices is out of bounds.
   """
   nums = generate_numbers()
   reset_colors()
