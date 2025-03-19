@@ -6,8 +6,7 @@
 Welcome to visualsort documentation!
 ===============================================
 
-.. automodule:: visualsort
-   :members:
+This is the documentation for the `visualsort` package.
 
 .. toctree::
    :maxdepth: 2
