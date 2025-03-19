@@ -48,6 +48,20 @@ pytest
 
 in the main directory.
 
+## Documentation
+
+Documentation for the library functions can be found [here](https://tomasbivainis.github.io/visualsort/visualsort.html).
+
+If you have added functions to the library, you can generate an updated version of the documentation with `pdoc` by typing the following command in the main directory:
+
+```
+pdoc visualsort --no-search --output-dir docs
+```
+
+This will automatically generate updated documentation in HTML format in the `docs` folder.
+
+For it to be able to automatically generate the documentation you will need to use the same code documentation format as the previous functions.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
