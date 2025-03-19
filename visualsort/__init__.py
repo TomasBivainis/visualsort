@@ -1,15 +1,15 @@
-from .module import *
+from util.module import *
 from collections.abc import Callable
 
 def compare(a: int, b: int, nums: list) -> bool:
   """
   Compares two numbers and updates the current frame.
   
-  :param a: The index of the first number in the array.
+  :param a (int): The index of the first number in the array.
   :type a: int
-  :param b: (int): The index of the second number in the array.
+  :param b (int): The index of the second number in the array.
   :type b: int
-  :param nums: (list): The array of numbers.
+  :param nums (list): The array of numbers.
   :type nums: list
   :return: True if the first number is greater than the second number, False otherwise.
   :rtype: bool
@@ -27,11 +27,11 @@ def swap(a: int, b: int, nums: list) -> list:
   Swaps two numbers and updates the current frame.
 
   
-  :param a: The index of the first number in the array.
+  :param a (int): The index of the first number in the array.
   :type a: int
-  :param b: The index of the second number in the array.
+  :param b (int): The index of the second number in the array.
   :type b: int
-  :param nums: The array of numbers.
+  :param nums (list): The array of numbers.
   :type nums: list
   :return: The array of numbers after the swap.
   :rtype: list
@@ -51,13 +51,13 @@ def render(algorithm: Callable, video_directory: str = "./", vidoe_name: str = "
   """
   Renders the given algorithm to a video.
 
-  :param algorithm: The sorting algorithm (writen using the provided visualsort functions) that will be rendered.
+  :param algorithm (function): The sorting algorithm (writen using the provided visualsort functions) that will be rendered.
   :type algorithm: function
-  :param video_directory: The dirrectory where the video file will be saved.
+  :param video_directory (str): The dirrectory where the video file will be saved.
   :type video_directory: str
-  :param video_name: The diseried name of the video file.
+  :param video_name (str): The diseried name of the video file.
   :type video_name: str
-  :param fps: The frame rate of the video.
+  :param fps (int): The frame rate of the video.
   :type fps: int
   :raises IndexError: If either of the indices is out of bounds.
   """
