@@ -47,7 +47,7 @@ def swap(a: int, b: int, nums: list) -> list:
   reset_colors()
   return nums
 
-def render(algorithm: Callable, video_directory: str = "./", vidoe_name: str = "movie", fps: int = 50) -> None:
+def render(algorithm: Callable, video_directory: str = os.getcwd(), vidoe_name: str = "movie", fps: int = 50) -> None:
   """
   Renders the given algorithm to a video.
 
