@@ -1,4 +1,17 @@
-# Visualsort
+<h1 align="center"> 
+  Visualsort 
+</h1>
+<h2 align="center"> 
+  Understand by seeing 
+</h2>
+<p align="center">
+  <a href="https://github.com/TomasBivainis/visualsort/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="visualsort is released under the MIT license." />
+  </a>
+  <a href="https://x.com/tomasbivainis">
+    <img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fx.com%2Ftomasbivainis&label=Follow%20me" alt="Follow @tomasbivainis" />
+  </a>
+</p>
 
 Visualsort provides functions with which you can program a sorting algortithm and then render the sorting algorithm.
 
