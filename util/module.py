@@ -2,7 +2,6 @@ from PIL import Image, ImageDraw
 import random
 import os
 from numpy import asarray
-os.environ["IMAGEIO_FFMPEG_EXE"] = "./ffmpeg"
 from moviepy.editor import *
 
 video_width = 1280
