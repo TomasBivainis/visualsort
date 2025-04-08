@@ -1,8 +1,6 @@
 pillow
-random
-os
 moviepy
 numpy
-PIL
 pytest
 pytest-mock
+urllib3
