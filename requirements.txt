@@ -1,6 +1,0 @@
-pillow
-moviepy
-numpy
-pytest
-pytest-mock
-urllib3
