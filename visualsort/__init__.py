@@ -1,5 +1,6 @@
-from util.module import *
+from .util.module import *
 from collections.abc import Callable
+from moviepy.editor import *
 
 def compare(a: int, b: int, nums: list) -> bool:
   """
