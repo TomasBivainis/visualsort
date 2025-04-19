@@ -8,6 +8,9 @@
 </p>
 
 <p align="center">
+  <a href="https://pypi.org/project/visualsort/">
+    <img src="https://img.shields.io/badge/pypi-0.1.0-blue" alt="visualsort pypi page." />
+  </a>
   <a href="https://github.com/TomasBivainis/visualsort/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="visualsort is released under the MIT license." />
   </a>
